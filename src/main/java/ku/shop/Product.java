@@ -39,6 +39,8 @@ public class Product {
     public void pick(int quantity) {
         if (quantity > this.quantity)
             throw new IllegalArgumentException("Insufficient product quantity");
+        if (quantity < 0)
+            throw new IllegalArgumentException("Product quantity must be positive");
         this.quantity -= quantity;
     }
 }
